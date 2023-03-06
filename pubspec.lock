@@ -894,7 +894,7 @@ packages:
     source: hosted
     version: "2.1.1"
   stream_chat:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: stream_chat
       sha256: "8e102d3f42c432273dcf55ccce20466e93d3c202827af3b8194b4af88b1f9b51"
@@ -910,7 +910,7 @@ packages:
     source: hosted
     version: "5.3.0"
   stream_chat_flutter_core:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: stream_chat_flutter_core
       sha256: "922cc98d1e908090d782f0e4cd6cc42a85c10e8839bb7e77bbf3b32912b43ab4"
