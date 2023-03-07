@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "204242394666",
+    "project_id": "chat-rooms-2c4c3",
+    "storage_bucket": "chat-rooms-2c4c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204242394666:android:23da7922100879c8e26d53",
+        "android_client_info": {
+          "package_name": "com.example.flutter_chat_rooms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204242394666-qii7l06ec8p56qbg7h150b77h6aha7t3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyKxFXIFhUtVR-qDP_0KmPMwY_s0F1rVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204242394666-qii7l06ec8p56qbg7h150b77h6aha7t3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

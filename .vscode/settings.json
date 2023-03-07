@@ -12,5 +12,10 @@
     },
     "git.autoRepositoryDetection": "subFolders",
     "git.mergeEditor": false,
-    "dart.previewFlutterUiGuides": false
+    "dart.previewFlutterUiGuides": false,
+    "cSpell.words": [
+        "dtqfpkev",
+        "Ijoibm",
+        "XVCJ"
+    ]
 }
