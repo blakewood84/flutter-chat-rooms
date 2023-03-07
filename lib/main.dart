@@ -1,24 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_rooms/firebase_options.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
 import 'package:flutter_chat_rooms/config/key.dart';
 import 'package:flutter_chat_rooms/rooms/rooms.dart';
 
 void main() async {
-  final client = StreamChatClient(
-    apiKey,
-    logLevel: Level.INFO,
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  runApp(MyApp(
-    client: client,
-  ));
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({required this.client, super.key});
-
-  final StreamChatClient client;
+class App extends StatelessWidget {
+  const App({super.key});
 
   // This widget is the root of your application.
   @override
@@ -30,7 +27,10 @@ class MyApp extends StatelessWidget {
       ),
       builder: (context, widget) {
         return StreamChat(
-          client: client,
+          client: StreamChatClient(
+            apiKey,
+            logLevel: Level.INFO,
+          ),
           child: widget,
         );
       },
