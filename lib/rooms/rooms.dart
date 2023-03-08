@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_rooms/chat_room/chat_room.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
 import 'dart:developer' as devtools;
@@ -16,7 +17,8 @@ class _RoomsScreenState extends State<RoomsScreen> {
     client: client,
     filter: Filter.and(
       [
-        Filter.equal('type', 'messaging'),
+        Filter.equal('type', 'team'),
+        Filter.equal('hidden', false),
       ],
     ),
     limit: 20,
@@ -34,10 +36,9 @@ class _RoomsScreenState extends State<RoomsScreen> {
 
   void initiateClient(StreamChatClient client) async {
     await client.connectUser(
-      User(id: 'hello-world'),
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGVsbG8td29ybGQifQ.Z7c_-kw2NyYAy_Q_za9m5b2YyZjgtqoIr37EBb8APns',
-    ); // final channel = client.channel('messaging', id: 'some-channel');
-    // await channel.watch();
+      User(id: 'mr-dude'),
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibXItZHVkZSJ9.iDkPW496LHJljWDvQptkz-Z9OIBwOI66QzAae5yJmn0',
+    );
 
     setState(() {
       isLoading = false;
@@ -64,7 +65,16 @@ class _RoomsScreenState extends State<RoomsScreen> {
       body: StreamChannelListView(
         controller: _listController,
         onChannelTap: (channel) {
-          devtools.log('${channel.id}');
+          channel.addMembers(['hello-world']);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => StreamChannel(
+                channel: channel,
+                child: const ChatRoomScreen(),
+              ),
+            ),
+          );
         },
       ),
     );
